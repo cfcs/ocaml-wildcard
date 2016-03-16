@@ -71,8 +71,8 @@ let add_with_val (labels : t) value s =
       begin match remainder with
         | Some (new_name, new_value, new_subelements)
           when new_name = this_name ->
-          let merged_sublable = construct (this_subelements) new_subelements in
-          put_asterisks_at_end elements (new_name, new_value, merged_sublable) , None
+          let merged_sublabel = construct (this_subelements) new_subelements in
+          put_asterisks_at_end elements (new_name, new_value, merged_sublabel) , None
         | None
         | Some _ -> (put_asterisks_at_end elements this_label , remainder)
       end
