@@ -1,0 +1,30 @@
+opam-version: "1.2"
+name: "wildcard"
+version: "0.1"
+maintainer: "root@localhost"
+authors: [ "none" ]
+license: "gopher://localhost/"
+homepage: "https://github.com/cfcs/ocaml-wildcard"
+dev-repo: "https://github.com/cfcs/ocaml-wildcard.git"
+bug-reports: "https://github.com/cfcs/ocaml-wildcard/issues"
+build: [
+  ["oasis" "setup"]
+  ["ocaml" "setup.ml" "-configure" "--prefix" prefix]
+  ["ocaml" "setup.ml" "-build"]
+]
+install: ["ocaml" "setup.ml" "-install"]
+remove: [
+  ["ocamlfind" "remove" "wildcard"]
+]
+build-test: [
+  ["oasis" "setup"]
+  ["ocaml" "setup.ml" "-configure" "--enable-tests"]
+  ["ocaml" "setup.ml" "-build"]
+  ["ocaml" "setup.ml" "-test"]
+]
+depends: [
+  "oasis" {build & >= "0.4"}
+  "ocamlfind" {build}
+  "ounit" {test}
+]
+available: [ ocaml-version >= "4.02.3" ]

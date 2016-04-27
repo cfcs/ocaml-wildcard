@@ -1,0 +1,3 @@
+Wildcard
+A library for matching of DNS labels (domains) with wildcards.
+A module is provided which implements a tree structure in which leaves can have data associated, and functions for searching the tree.
